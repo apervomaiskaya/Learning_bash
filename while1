@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Дайте, пожалуйста, имя файлу:" num
+
+while read line
+do
+echo "Line $num: $line"
+num=$(( $num ))
+done < num 

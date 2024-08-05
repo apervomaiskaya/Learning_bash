@@ -1,0 +1,21 @@
+#!/bin/bash
+read -p "enter first value: " x
+read -p "enter second value: " y
+read -p "enter action: " operator
+
+case $operator in
+"+") echo " $x + $y =" $(expr "$x" + "$y");;
+"*") echo " $x * $y =" $(expr "$x" \* "$y");;
+"-") echo " $x - $y =" $(expr "$x" - "$y");;
+"/") if [ $y -eq 0 ]
+then
+    echo "Error! Division by zero"
+else
+    echo " $x / $y = " $(expr "$x" / "$y")
+fi;;
+"^") echo " $x ^ $y  = " $(( "$x" ** "$y" ));;
+
+*) echo "unknown operation!"
+esac
+
+

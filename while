@@ -1,0 +1,11 @@
+#!/bin/bash
+
+num=0  # Удаляем пробел вокруг '='
+while [ $num -le 9 ]
+do
+    echo $num
+    num=$(expr $num + 1)  # Удаляем пробел вокруг '='
+done
+
+
+

@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "server": "localhost",
+            "port": 8123,
+            "useHTTPS": false,
+            "database": "default",
+            "username": "default",
+            "enableTls": false,
+            "previewLimit": 50,
+            "tls": {},
+            "driver": "ClickHouse",
+            "name": "ClickHouse",
+            "password": ""
+        }
+    ],
+    "terminal.integrated.middleClickBehavior": "paste"
+}

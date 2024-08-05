@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+read -p  "Please enter a name: " username
+
+if [ "$username" = "Anna" ] 
+then 
+	read -s -p  "Please enter a password: " password
+
+	if [ "$password" = "123"  ]
+
+	then 
+		echo "Wellcome, $username !"
+		
+	else 
+		echo "Invalid password!"
+		exit 1
+	fi
+	
+else 
+	echo "Invalid username!"
+fi
+
