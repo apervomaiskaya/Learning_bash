@@ -1,21 +1,46 @@
 #!/bin/bash
-read -p "enter first value: " x
-read -p "enter second value: " y
-read -p "enter action: " operator
+read -p "Enter first value: " x
+read -p "Enter second value: " y
+read -p "Enter action: " operator
+
+sqrt() {
+    echo "sqrt($1)" | bc -l
+}
+
+plus(){
+    echo "$1 + $2" | bc -l
+}
+
+multiplication(){
+    echo "$1 * $2" | bc -l
+}
+
+minus(){
+    echo "$1 - $2" | bc -l
+}
+
+division(){
+    echo "$1 / $2" | bc -l
+}
+
+exponentiation(){
+    echo "$1^$2" | bc -l
+}
 
 case $operator in
-"+") echo " $x + $y =" $(expr "$x" + "$y");;
-"*") echo " $x * $y =" $(expr "$x" \* "$y");;
-"-") echo " $x - $y =" $(expr "$x" - "$y");;
-"/") if [ $y -eq 0 ]
-then
-    echo "Error! Division by zero"
-else
-    echo " $x / $y = " $(expr "$x" / "$y")
-fi;;
-"^") echo " $x ^ $y  = " $(( "$x" ** "$y" ));;
+"+") echo "$x + $y =" $(plus "$x" "$y");;
+"*") echo "$x * $y =" $(multiplication "$x" "$y");;
+"-") echo "$x - $y =" $(minus "$x" "$y");;
 
-*) echo "unknown operation!"
+"/") if [ "$y" -eq 0 ]; then
+        echo "Error! Division by zero"
+    else
+        echo "$x / $y =" $(division "$x" "$y")
+    fi;;
+
+"^") echo "$x ^ $y =" $(exponentiation "$x" "$y");;
+
+"sqrt") echo "sqrt($x) =" $(sqrt "$x");;
+
+*) echo "Unknown operation!"
 esac
-
-
