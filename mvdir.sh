@@ -1,6 +1,5 @@
 #!/bin/bash
-#
-#
+
 if [ $# -ne 2 ]
 then
 	echo "2 arguments are needed, directory being moved and target directory"
